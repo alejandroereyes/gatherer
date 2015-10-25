@@ -13,4 +13,10 @@ RSpec.describe Project do
     project.tasks << task
     expect(project).to_not be_done #using the implicit matcher do use done as predicate method for project ie. project.done? will be called
   end
+
+  it 'marks a project done if its task are done' do
+    project.tasks << task
+    task.mark_complete
+    expect(project).to be_done
+  end
 end
