@@ -3,7 +3,7 @@ class Task
     @completed = false
   end
 
-  def mark_complete
+  def mark_completed
     @completed = true
   end
 
