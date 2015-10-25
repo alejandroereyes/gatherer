@@ -27,6 +27,5 @@ RSpec.describe Task do
       expect(task).to be_part_of_velocity
       expect(task.points_toward_velocity).to eq(3)
     end
-
   end
 end
