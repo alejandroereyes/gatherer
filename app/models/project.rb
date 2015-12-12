@@ -5,6 +5,10 @@ class Project
     @tasks = []
   end
 
+  def self.velocity_length_in_days
+    21
+  end
+
   def incomplete_tasks
     tasks.reject(&:complete?)
   end
@@ -26,7 +30,7 @@ class Project
   end
 
   def current_rate
-    completed_velocity * 1.0 / 21
+    completed_velocity * 1.0 / Project.velocity_length_in_days
   end
 
   def projected_days_remaining
