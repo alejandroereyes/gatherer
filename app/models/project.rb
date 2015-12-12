@@ -3,7 +3,6 @@ class Project
 
   def initialize
     @tasks = []
-    @due_date
   end
 
   def incomplete_tasks
