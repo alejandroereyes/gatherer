@@ -1,0 +1,2 @@
+class RasksController < ApplicationController
+end
