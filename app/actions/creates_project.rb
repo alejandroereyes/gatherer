@@ -16,7 +16,7 @@ class CreatesProject
     task_string.split("\n").map do |string|
       title, size = string.split(":")
       size = 1 if (size.blank? || size.to_i.zero?)
-      Task.new(title: task_string, size: size)
+      Task.new(title: title, size: size)
     end
   end
 end
