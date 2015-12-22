@@ -13,5 +13,14 @@
     <li>Your tests are also code. Specifically, your tests are code that does not have tests.
       <ul>
         <li>Having your tests be as clear and manageable as possible is the only way to keep them honest.</li>
+        <li>Use <b>"S.W.I.F.T."</b> criteria to evaluate test quality
+          <ol>
+            <li><b>Straightforward:</b> it's purpose is immediately understandable.</li>
+            <li><b>Well Defined:</b> running the same test repeatedly gives the same result.</li>
+            <li><b>Independent:</b> it's not dependent on any other tests or external data to run.</li>
+            <li><b>Fast:</b> As the code base grows, so do tests that take up more time.</li>
+            <li><b>Truthful:</b> accurately reflects the underlying code-it passes when the underlying code works, and fails when it does not. This is easier said then done.</li>
+          </ol>
+        </li>
       <ul></li>
   <ol>
