@@ -19,4 +19,9 @@ class CreatesProject
       Task.new(title: title, size: size)
     end
   end
+
+  def create
+    build
+    project.save
+  end
 end
