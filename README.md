@@ -33,4 +33,5 @@
       </ul>
     </li>
     <li>Try to extract methods when you see compound Booleans, local variables, or inline comments.</li>
+    <li>Fixtures are particularly useful for global semi-static data stored in the database.</li>
   <ol>
