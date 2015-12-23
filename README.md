@@ -22,5 +22,15 @@
             <li><b>Truthful:</b> accurately reflects the underlying code-it passes when the underlying code works, and fails when it does not. This is easier said then done.</li>
           </ol>
         </li>
-      <ul></li>
+      </ul>
+    </li>
+    <li>If you find yourself writing tests that already pass given the current state of the code, that often means your'e writing too much code in each pass.</li>
+    <li>Refactoring is where a lot of design happens in TDD, and it's easiest to do in small steps.
+      <ul>
+      <li>Break up complexity</li>
+      <li>Combine duplication</li>
+      <li>Look for abstractions waiting to be found</li>
+      </ul>
+    </li>
+    <li>Try to extract methods when you see compound Booleans, local variables, or inline comments.</li>
   <ol>
