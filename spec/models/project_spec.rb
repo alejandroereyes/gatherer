@@ -68,4 +68,25 @@ RSpec.describe Project do
       expect(project.remaining_size).to eq(5)
     end
   end
+
+  describe "dealing with doubles" do
+    it "stubs and object by letting it receive a message and returning nill" do
+      project = Project.new(name: "Project Greenlight")
+      allow(project).to receive(:name) # in the stub implementation the message is never sent to the actual object, the stub intercepts
+      expect(project.name).to be_nil
+    end
+
+    it "stubs by allowing a message and returning the speficied resopnse" do
+      project = Project.new(name: "Project Greenlight")
+      allow(project).to receive(:name).and_return("Fred") # the stub here returns "Fred" when in intercepts the :name
+      expect(project.name).to eq("Fred")
+    end
+
+    it "stubs the class" do
+      allow(Project).to receive(:find).and_return(
+        Project.new(name: "Project Greenlight")) # it's also possible to stud a class
+      project = Project.find(1)
+      expect(project.name).to eq("Project Greenlight")
+    end
+  end
 end
