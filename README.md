@@ -34,4 +34,6 @@
     </li>
     <li>Try to extract methods when you see compound Booleans, local variables, or inline comments.</li>
     <li>Fixtures are particularly useful for global semi-static data stored in the database.</li>
+    <li>The go-to build strategy for factory_girl should be build_stubbed unless there is a need for the object to be in the database during the test.</li>
+    <li>Avoid defining associations automatically in factory definitions. Set them test by test, as needed. You'll wind up with more manageable test data.</li>
   <ol>
