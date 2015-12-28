@@ -48,4 +48,5 @@
         <li>Verify security, such as requiring logins for pages as needed & testing that users who enter a URL for a resource they shouldn't have access to are blocked or diverted.</li>
       </ul>
     </li>
+    <li>When testing for view elements, try to test for DOM classes that you control rather than text or element names that might be subject to design changes.</li>
   <ol>
