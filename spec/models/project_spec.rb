@@ -69,24 +69,35 @@ RSpec.describe Project do
     end
   end
 
-  describe "dealing with doubles" do
-    it "stubs and object by letting it receive a message and returning nill" do
-      project = Project.new(name: "Project Greenlight")
-      allow(project).to receive(:name) # in the stub implementation the message is never sent to the actual object, the stub intercepts
-      expect(project.name).to be_nil
+  describe "dealing with doubles - stubs & mocks" do
+    context "stubbing" do
+      it "stubs and object by letting it receive a message and returning nill" do
+        project = Project.new(name: "Project Greenlight")
+        allow(project).to receive(:name) # in the stub implementation the message is never sent to the actual object, the stub intercepts
+        expect(project.name).to be_nil
+      end
+
+      it "stubs by allowing a message and returning the speficied resopnse" do
+        project = Project.new(name: "Project Greenlight")
+        allow(project).to receive(:name).and_return("Fred") # the stub here returns "Fred" when in intercepts the :name
+        expect(project.name).to eq("Fred")
+      end
+
+      it "stubs the class" do
+        allow(Project).to receive(:find).and_return(
+          Project.new(name: "Project Greenlight")) # it's also possible to stud a class
+        project = Project.find(1) # by stubbing find, we're not hitting the db. Should avoid stub on find, it would be better to stub a specific created model method that has meaningful and specific behavior.
+        # allow_any_instance_of(Project).to receive(:save).and_return(false) # this would allow any instance of a class to stub a certian message.
+        expect(project.name).to eq("Project Greenlight")
+      end
     end
 
-    it "stubs by allowing a message and returning the speficied resopnse" do
-      project = Project.new(name: "Project Greenlight")
-      allow(project).to receive(:name).and_return("Fred") # the stub here returns "Fred" when in intercepts the :name
-      expect(project.name).to eq("Fred")
-    end
-
-    it "stubs the class" do
-      allow(Project).to receive(:find).and_return(
-        Project.new(name: "Project Greenlight")) # it's also possible to stud a class
-      project = Project.find(1)
-      expect(project.name).to eq("Project Greenlight")
+    context "mocking" do
+      it "mocks an object" do
+        mock_project = Project.new(name: "Project Greenlight")
+        expect(mock_project).to receive(:name).and_return("Fred") # a mock sets up an expectation that a specific message will be sent to the mock object, otherwise the test will fail.
+        expect(mock_project.name).to eq("Fred") # Note: a stub is equal to a mock expectation defined with at_least(0).times
+      end
     end
   end
 end

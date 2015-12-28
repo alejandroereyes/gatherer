@@ -37,4 +37,5 @@
     <li>The go-to build strategy for factory_girl should be build_stubbed unless there is a need for the object to be in the database during the test.</li>
     <li>Avoid defining associations automatically in factory definitions. Set them test by test, as needed. You'll wind up with more manageable test data.</li>
     <li>Use partial doubles when you want to ensure most of your object behavior. User full doubles when the behavior of the stubbed object doesn't matter-only its public interface does.</li>
+    <li>The use of the allow_any_instance_of stub often means the underlying code could be refactored with a more useful method to stub.</li>
   <ol>
