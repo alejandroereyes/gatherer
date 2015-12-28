@@ -50,4 +50,14 @@
     </li>
     <li>When testing for view elements, try to test for DOM classes that you control rather than text or element names that might be subject to design changes.</li>
     <li>When testing a Boolean condition, make sure to write a test for both halves o the condition.</li>
-  <ol>
+    <li>By for the biggest & easiest trap you can fall into when dealing with integration tests is the temptation to use them like unit tests.
+      <ul>
+        <li><b>Good:</b> The interaction between a controller & the model, or other objects that provide data.</li>
+        <li><b>Good:</b> The interaction between multiple controller actions that comprise a common workflow.</li>
+        <li><b>Good:</b> Certain security issues that involve the interaction between a user state and a particular controller action.</li>
+        <li><b>Bad:</b> Special cases of logic, such as what happens if data is nil or has an unexpected value.</li>  
+        <li><b>Bad:</b> Error cases, unless an error case genuinely results in a unique user experience.</li>
+        <li><b>Bad:</b> Internal implementation details of logic.</li>
+      </ul>
+    </li>
+  </ol>
