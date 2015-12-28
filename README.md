@@ -49,4 +49,5 @@
       </ul>
     </li>
     <li>When testing for view elements, try to test for DOM classes that you control rather than text or element names that might be subject to design changes.</li>
+    <li>When testing a Boolean condition, make sure to write a test for both halves o the condition.</li>
   <ol>
