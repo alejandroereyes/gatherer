@@ -90,6 +90,7 @@ RSpec.describe Project do
         # allow_any_instance_of(Project).to receive(:save).and_return(false) # this would allow any instance of a class to stub a certian message.
         expect(project.name).to eq("Project Greenlight")
       end
+    end
 
     context "mocking" do
       it "mocks an object" do
