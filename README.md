@@ -40,4 +40,5 @@
     <li>The use of the `allow_any_instance_of` stub often means the underlying code could be refactored with a more useful method to stub.</li>
     <li>If you're stubbing methods that don't belong to your program(like ActiveRecord methods), think about whether the code would be better if restructured to wrap the external behavior.</li>
     <li>A stubbed method that returns a stub is usually okay. A <b>stubbed method that returns a stub that itself contains a stub</b> probably means your code is <b>too dependent on the internals of other objects.</b></li>
+    <li>Don't mock what you don't own.</li>
   <ol>

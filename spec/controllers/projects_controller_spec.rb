@@ -36,7 +36,9 @@ RSpec.describe ProjectsController, type: :controller do
     end
 
     it "fails update gracefully" do
-      sample = Project.create!(name: "Testy McTestertin") # this is set up as such to give the object an id, try using Factory Girl's build_stubbed after you get the test to pass
+      sample = Project.create!(name: "Testy McTestertin") # this is set up as such to give the object an id
+      # sample = FactoryGirl.build_stubbed(:project)
+      #   using Factory Girl's build_stubbed will also get an id without hitting the db
       expect(sample).to receive(:update_attributes).and_return(false)
       allow(Project).to receive(:find).and_return(sample)
       patch :update, id: sample.id, project: {name: "Hal"}
