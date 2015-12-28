@@ -4,9 +4,19 @@ RSpec.describe ProjectsController, type: :controller do
 
   describe "POST create" do
     it "creates a project" do
-      post :create, project: { name: "Runway", tasks: "Start something:2" }
+      fake_action = instance_double(CreatesProject, create: true) # instance_double verifies against methods that are actually part of the instance, if any other called then the test will fail.
+      expect(CreatesProject).to receive(:new) # this validates that the controller is calling the correct methods were we want the data to come from.
+        .with(name: "Runway", task_string: "start something:2")
+        .and_return(fake_action) # super important to test the CreatesProject properly since this DOES NOT test its logic.
+      post :create, project: { name: "Runway", tasks: "start something:2" }
       expect(response).to redirect_to(projects_path)
-      expect(assigns(:action).project.name).to eq("Runway")
+      expect(assigns(:action)).not_to be_nil # on the surface may seem like a weaker test but the actual value of the ivar isn't the controller's responsibility - only that is sets one on success
+      # expect(assigns(:action).project.name).to eq("Runway")
+        # the above assertion is overreaching - beyond the controller's responsibility,
+        # the controller's duty is as a conduit for the data passed to it,
+        # it's responsibility is how it gathers & moves data - setting a value to satisfy the view & calling some other place for data.
+        # The specs for CreatesProject test the logic of building the data,
+        # we just need to make sure the controller calls the correct methods(mocks expect to be called!).
     end
 
     it "goes back to the form on failure" do
