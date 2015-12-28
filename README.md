@@ -41,4 +41,11 @@
     <li>If you're stubbing methods that don't belong to your program(like ActiveRecord methods), think about whether the code would be better if restructured to wrap the external behavior.</li>
     <li>A stubbed method that returns a stub is usually okay. A <b>stubbed method that returns a stub that itself contains a stub</b> probably means your code is <b>too dependent on the internals of other objects.</b></li>
     <li>Don't mock what you don't own.</li>
+    <li>A controller test should test <b>controller</b> behavior. A controller test <b>should not fail because of problems in the model.</b>
+      <ul>
+        <li>It should verify that a normal, basic user request triggers expected model calls & passes the necessary data to the view.</li>
+        <li>Verify that an ill-informed or otherwise invalid user request is handled appropriately.</li>
+        <li>Verify security, such as requiring logins for pages as needed & testing that users who enter a URL for a resource they shouldn't have access to are blocked or diverted.</li>
+      </ul>
+    </li>
   <ol>
