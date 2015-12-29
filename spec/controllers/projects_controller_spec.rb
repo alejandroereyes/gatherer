@@ -49,4 +49,21 @@ RSpec.describe ProjectsController, type: :controller do
       expect(response).to render_template(:edit)
     end
   end
+
+  describe "GET show" do
+    let(:project) { Project.create(name: "Project Runway") }
+
+    it "allows a user who is part of the project to see the project" do
+      allow(controller.current_user).to receive(:can_view?).and_return(true)
+      # controller.current_user.stub(can_view?: true) # this syntax is being deprecated
+      get :show, id: project.id
+      expect(response).to render_template(:show)
+    end
+
+    it "does not allow a user who is not part of the project to see the project" do
+      allow(controller.current_user).to receive(:can_view?).and_return(false)
+      get :show, id: project.id
+      expect(response).to redirect_to(new_user_session_path)
+    end
+  end
 end
