@@ -5,6 +5,7 @@ describe "adding a new task" do
   include Warden::Test::Helpers
 
   before(:example) do
+    projects(:bluebook).roles.create(user: users(:user))
     login_as users(:user)
   end
 

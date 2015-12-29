@@ -9,7 +9,7 @@ describe "with users and roles" do
     click_button("Log in")
   end
 
-  let(:user) { User.create(email: "test@example.com", password: "password") }
+  let(:user) { FactoryGirl.create(:user) }
 
   it "allows a logged-in user to view the project index page" do
     log_in_as(user)
@@ -25,7 +25,7 @@ describe "with users and roles" do
   describe "roles" do
     let(:project) { Project.create(name: "Project Gutenberg") }
 
-    it "allows a suer who is part of a project to see that project" do
+    it "allows a user who is part of a project to see that project" do
       project.roles.create(user: user)
       log_in_as(user)
       visit(project_path(project))
