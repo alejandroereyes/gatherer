@@ -60,4 +60,5 @@
         <li><b>Bad:</b> Internal implementation details of logic.</li>
       </ul>
     </li>
+    <li>Security issues are, at base, just bugs. Most of the practices you follow to keep your code bug-free will also help prevent and diagnose security issues.</li>
   </ol>
