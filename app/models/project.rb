@@ -45,4 +45,8 @@ class Project < ActiveRecord::Base
     return 1 if tasks.empty?
     (tasks.last.project_order || tasks.size) + 1
   end
+
+  def self.all_public
+    where(public: true)
+  end
 end
