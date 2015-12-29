@@ -64,4 +64,5 @@
     <li>Always do security testing in pairs: the blocked logic and the okay logic.</li>
     <li>When a single change in your code breaks multiple tests, consider the idea that your testing strategy is flawed.</li>
     <li>Write your test as close as possible to the code logic that's being tested.</li>
+    <li>Adding user authentication can be very disruptive to existing tests. Try to get the basic infrastructure in place early.</li>
   </ol>

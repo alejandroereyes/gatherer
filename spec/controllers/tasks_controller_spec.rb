@@ -1,9 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe TasksController, type: :controller do
+
+  let!(:user) { FactoryGirl.create(:user) }
+
   before(:example) do
+    sign_in user #User.create!(email: "rspec@example.com", password: "password")
     ActionMailer::Base.deliveries.clear
-    sign_in User.create!(email: "rspec@example.com", password: "password")
   end
 
   describe "PATCH update" do
@@ -23,6 +26,23 @@ RSpec.describe TasksController, type: :controller do
       expect(email.subject).to eq("A task has been completed")
       expect(email.to).to eq(["monitor@tasks.com"])
       expect(email.body.to_s).to match(/Write section on testing mailers/)
+    end
+  end
+
+  describe "POST create" do
+    fixtures :all
+    let!(:project) { FactoryGirl.create(:project) }
+
+    it "allows a user to create a task for a project they belong to" do
+      user.projects << project
+      user.save!
+      post :create, task: { project_id: project.id, title: "just do it", size: "1" }
+      expect(project.reload.tasks.first.title).to eq("just do it")
+    end
+
+    it "does not allow a user to create a task for a project without access" do
+      post :create, task: { project_id: project.id, title: "just do it", size: "1" }
+      expect(project.reload.tasks.size).to eq(0)
     end
   end
 end
