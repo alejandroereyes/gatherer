@@ -77,4 +77,6 @@
       </ul>
     </li>
     <li>Test the error code based on which object in the system needs to respond to the error.</li>
+    <li>User JavaScript testing to help design your JavaScript code to allow for modular items with few tangled interdependencies.</li>
+    <li>Create only as many DOM elements or data as needed for the test to run.</li>
   </ol>
