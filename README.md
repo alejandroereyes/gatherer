@@ -67,4 +67,5 @@
     <li>Adding user authentication can be very disruptive to existing tests. Try to get the basic infrastructure in place early.</li>
     <li>Test for mass assignment any time you have an attribute that needs to be secure and a controller method that touches that class based on user input.</li>
     <li>Use an automatic security scanner to check for common security issues.</li>
+    <li>Mediating interaction to an external server through an adapter that is part of your code makes the interaction easier to test and to use.</li>
   </ol>
