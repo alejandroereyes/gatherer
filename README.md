@@ -61,4 +61,6 @@
       </ul>
     </li>
     <li>Security issues are, at base, just bugs. Most of the practices you follow to keep your code bug-free will also help prevent and diagnose security issues.</li>
+    <li>Always do security testing in pairs: the blocked logic and the okay logic.</li>
+    <li>When a single change in your code breaks multiple tests, consider the idea that your testing strategy is flawed.</li>
   </ol>
