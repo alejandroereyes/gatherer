@@ -69,5 +69,11 @@
     <li>Use an automatic security scanner to check for common security issues.</li>
     <li>Mediating interaction to an external server through an adapter that is part of your code makes the interaction easier to test and to use.</li>
     <li>Use the VCR gem to allow your integration tests to run against server response data.</li>
-    <li>Use an adapter to test client behavior without being dependent on the server API.</li>
+    <li>Use an adapter to test client behavior without being dependent on the server API.
+      <ul>
+        <li>External Service can accessed from multiple points in your code.</li>
+        <li>Interaction with ES has logic of its own, such as authentication or type changing or common sets of options.</li>
+        <li>Handles any mismatch between the language or metaphor of the API and the domain terms and structures of your code.</li>
+      </ul>
+    </li>
   </ol>
