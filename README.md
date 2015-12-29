@@ -76,4 +76,5 @@
         <li>Handles any mismatch between the language or metaphor of the API and the domain terms and structures of your code.</li>
       </ul>
     </li>
+    <li>Test the error code based on which object in the system needs to respond to the error.</li>
   </ol>
