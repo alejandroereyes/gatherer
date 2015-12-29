@@ -7,6 +7,13 @@ describe CreatesProject do
     expect(creator.project.name).to eq("Project Runway")
   end
 
+  it "add users to the project" do
+    user = User.new
+    creator = CreatesProject.new(name: "Project Runway", users: [user])
+    creator.build
+    expect(creator.project.users).to eq([user])
+  end
+
   describe "task string parsing" do
     let(:creator) { CreatesProject.new(name: "Test", task_string: task_string) }
     let(:tasks)   { creator.convert_string_to_tasks }

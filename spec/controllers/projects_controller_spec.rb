@@ -2,15 +2,17 @@ require 'rails_helper'
 
 RSpec.describe ProjectsController, type: :controller do
 
+  let(:user) { FactoryGirl.create(:user) }
+
   before(:example) do
-    sign_in User.create!(email: "rspec@example.com", password: "password")
+    sign_in user #User.create!(email: "rspec@example.com", password: "password")
   end
 
   describe "POST create" do
     it "creates a project" do
       fake_action = instance_double(CreatesProject, create: true) # instance_double verifies against methods that are actually part of the instance, if any other called then the test will fail.
       expect(CreatesProject).to receive(:new) # this validates that the controller is calling the correct methods were we want the data to come from.
-        .with(name: "Runway", task_string: "start something:2")
+        .with(name: "Runway", task_string: "start something:2", users: [user])
         .and_return(fake_action) # super important to test the CreatesProject properly since this DOES NOT test its logic.
       post :create, project: { name: "Runway", tasks: "start something:2" }
       expect(response).to redirect_to(projects_path)
@@ -64,6 +66,19 @@ RSpec.describe ProjectsController, type: :controller do
       allow(controller.current_user).to receive(:can_view?).and_return(false)
       get :show, id: project.id
       expect(response).to redirect_to(new_user_session_path)
+    end
+  end
+
+  describe "GET index" do
+    it "displays all projects correctly" do
+      user = User.new
+      project = Project.new(:name => "Project Greenlight")
+      # controller.expects(:current_user).returns(user)
+      expect(controller).to receive(:current_user).and_return(user)
+      # user.expects(:visible_projects).returns([project])
+      expect(user).to receive(:visible_projects).and_return([project])
+      get :index
+      assert_equal assigns[:projects].map(&:__getobj__), [project]
     end
   end
 end

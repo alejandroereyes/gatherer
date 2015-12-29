@@ -5,13 +5,14 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.all
+    @projects = ProjectPresenter.from_project_list(current_user.visible_projects)
   end
 
   def create
     @action = CreatesProject.new(
       name: params[:project][:name],
-      task_string: params[:project][:tasks]
+      task_string: params[:project][:tasks] || "",
+      users: [current_user]
     )
     success = @action.create
     if success
