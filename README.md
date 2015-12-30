@@ -57,7 +57,7 @@
         <li><b>Good:</b> The interaction between a controller & the model, or other objects that provide data.</li>
         <li><b>Good:</b> The interaction between multiple controller actions that comprise a common workflow.</li>
         <li><b>Good:</b> Certain security issues that involve the interaction between a user state and a particular controller action.</li>
-        <li><b>Bad:</b> Special cases of logic, such as what happens if data is nil or has an unexpected value.</li>  
+        <li><b>Bad:</b> Special cases of logic, such as what happens if data is nil or has an unexpected value.</li>
         <li><b>Bad:</b> Error cases, unless an error case genuinely results in a unique user experience.</li>
         <li><b>Bad:</b> Internal implementation details of logic.</li>
       </ul>
