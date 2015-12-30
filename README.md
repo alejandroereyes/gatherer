@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/alejandroereyes/gatherer.svg?branch=master)](https://travis-ci.org/alejandroereyes/gatherer)  [![Test Coverage](https://codeclimate.com/github/alejandroereyes/gatherer/badges/coverage.svg)](https://codeclimate.com/github/alejandroereyes/gatherer/coverage)  [![Code Climate](https://codeclimate.com/github/alejandroereyes/gatherer/badges/gpa.svg)](https://codeclimate.com/github/alejandroereyes/gatherer)
+[![Build Status](https://travis-ci.org/alejandroereyes/gatherer.svg?branch=master)](https://travis-ci.org/alejandroereyes/gatherer)  [![Test [![Test Coverage](https://codeclimate.com/github/alejandroereyes/gatherer/badges/coverage.svg)](https://codeclimate.com/github/alejandroereyes/gatherer/coverage)  [![Code Climate](https://codeclimate.com/github/alejandroereyes/gatherer/badges/gpa.svg)](https://codeclimate.com/github/alejandroereyes/gatherer)
 
 # Gatherer
   This app is a tutorial taken from [Rails 4 Test Prescriptions](https://pragprog.com/book/nrtest2/rails-4-test-prescriptions) in order to learn more about testing.
