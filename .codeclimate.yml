@@ -1,2 +1,6 @@
 languages:
   Ruby: true
+exclude_paths:
+- "spec/javascripts/helpers/jasmine-fixture.js"
+- "spec/javascripts/helpers/jasmine-jquery.js"
+- "spec/javascripts/helpers/sinon-1.10.2.js"
