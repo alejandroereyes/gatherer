@@ -5,3 +5,7 @@ rvm:
 script:
   - rake db:create db:migrate db:test:prepare
   - bundle exec rspec spec
+
+addons:
+    code_climate:
+        repo_token: 8d7d6a696ad0b911a08156ae3eb0de7c29dc66ac2c790a78dcf697b7a3f1c38f
