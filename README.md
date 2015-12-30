@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/alejandroereyes/gatherer.svg?branch=master)](https://travis-ci.org/alejandroereyes/gatherer)
+
 # Gatherer
   This app is a tutorial taken from [Rails 4 Test Prescriptions](https://pragprog.com/book/nrtest2/rails-4-test-prescriptions) in order to learn more about testing.
 
@@ -83,4 +85,5 @@
     <li>Treating the DOM as an external service that you relate to via an adapter can lead to very maintainable JavaScript code.</li>
     <li>Use Capybara's JavaScript integration-testing capabilities sparingly lest you be very, very annoyed. Test as much as possible within each layer, separate from the others.</li>
     <li>When a formerly passing test fails, something has changed.</li>
+    <li>Using `p` and various related methods is a quick & easy way to get a sense of why a test is behaving badly.</li>
   </ol>
