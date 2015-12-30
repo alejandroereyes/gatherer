@@ -80,4 +80,5 @@
     <li>User JavaScript testing to help design your JavaScript code to allow for modular items with few tangled interdependencies.</li>
     <li>Create only as many DOM elements or data as needed for the test to run.</li>
     <li>Jasmine spies replace a function object with a spy object that keeps track of how often the function is called.</li>
+    <li>Treating the DOM as an external service that you relate to via an adapter can lead to very maintainable JavaScript code.</li>
   </ol>
