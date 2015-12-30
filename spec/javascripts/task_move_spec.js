@@ -37,4 +37,20 @@ describe("with a list of tasks", function() {
       expect(Project.successfulUpdate).toHaveBeenCalled();
     });
   });
+
+  // describe("with an unsuccessful Ajax call", function() {
+  //
+  //   beforeEach(function() {
+  //     this.server.respondWith("PATCH", "/tasks/2/up.js",
+  //       [500, {}, ""]);
+  //   });
+  //
+  //   it("invokes a callback on failure", function() {
+  //     spyOn(Project, "failedUpdate").and.callThrough();
+  //     $("#task_2 .up").click();
+  //     this.server.respond()
+  //     expect(Project.failedUpdate).toHaveBeenCalled();
+  //   });
+  // });
+
 });
