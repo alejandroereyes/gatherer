@@ -86,4 +86,40 @@
     <li>Use Capybara's JavaScript integration-testing capabilities sparingly lest you be very, very annoyed. Test as much as possible within each layer, separate from the others.</li>
     <li>When a formerly passing test fails, something has changed.</li>
     <li>Using `p` and various related methods is a quick & easy way to get a sense of why a test is behaving badly.</li>
+    <li>Use `git bisect` to track down mysterious failures in your code when you have no idea how they were inserted.
+      <ul>
+      <li>The problem needs to have been caused by a code change, not a change in your environment.</li>
+      <li>You need to be able to reliably trigger the problem.</li>
+      <li>It helpers if your commits are relatively small and if the system is in a loadable & executable state after each one.</li>
+      </ul>
+    </li>
+    <li>If you specify a test by line number, be sure not to add lines to the file. Added lines could make it so you aren't running the test you think you're running.</li>
+    <li>Rails is not your application, it is a framework on which you build your application.</li>
+    <li>If you have enough time to break focus while your tests run, you may not be getting the full value of the TDD process.</li>
+    <li>By requiring the needed files instead of the `rails_helper`, you can bypass the loading of rails and isolate your tests to their precise needed data, thus speeding them up.</li>
+    <li>The only way to know the boundaries of a new coding tool is to go past them. Try things.</li>
+    <li>You can use doubles to remove test dependencies.</li>
+    <li>You don't need to start with elaborate object indirection, but it's useful when logic gets complicated.</li>
+    <li>When dealing with legacy code, respect code that works. You don't know what constraints the previous coders worked under.</li>
+    <li>When dealing with legacy code, test the following.
+      <ul>
+        <li>Describe the current behavior</li>
+        <li>Make sure code changes have no unintended consequences.</li>
+        <li><b>Promote isolation of new features</b></li>
+        <li>In the beginning, their might be a heightened use of mock objects, but over time the codebase & test coverage will improve.</li>
+        <li>Do one thing at a time, to the extent possible.</li>
+      </ul>
+    </li>
+    <li>When writing initial unit tests for legacy code, use the test to explore the code's behavior. Try to write a passing test without changing the code.
+      <ul>
+        <li>You might need to create objects and the chain can get unwieldy, it's okay: <b>the goal is to understand what's happening.</b> If the code is unwieldy, let the test stand as a monument to things that need to be changed.</li>
+      </ul>
+    </li>
+    <li>Dependency Removal - well done TDD forces individual pieces of the code to be as independent from each other as possible.
+      <ul>
+        <li>Where possible, write new code in new methods or new classes, and call them from the existing code.</li>
+        <li>Keep an eye out for any added database constraints, such as foreign key constraints not specified in the code.</li>
+        <li>Using mocks can allow you to temporarily put aside the rest of the application and focus on the single part you're trying to figure out.</li>
+      </ul>
+    </li>
   </ol>
