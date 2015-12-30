@@ -5,8 +5,8 @@
 
 ### Test Prescriptions
   <ol>
-    <li>User the TDD process to create and adjust your code's design in small, incremental steps.</li>
-    <li>In a test-driven process, if it is difficult to write tests for a feature, strongly consider the possibility that the underlying code needs to be changed.</li>
+    <li>Use the TDD process to create and adjust your code's design in small, incremental steps.</li>
+    <li>In a test-driven process, <b>if it is difficult to write tests for a feature</b>, strongly consider the possibility that the <b>underlying code needs to be changed</b>.</li>
     <li>Initializing objects is a good starting place for a TDD process. Another good approach is to use the test to design what you want a successful interaction of the feature to look like.</li>
     <li>When possible, write your tests to describe your code's behavior, not its implementation.</li>
     <li>Keeping your code as simple as possible allows you to focus complexity on the areas that really need complexity.</li>
@@ -51,7 +51,7 @@
       </ul>
     </li>
     <li>When testing for view elements, try to test for DOM classes that you control rather than text or element names that might be subject to design changes.</li>
-    <li>When testing a Boolean condition, make sure to write a test for both halves o the condition.</li>
+    <li>When testing a Boolean condition, make sure to write a test for both halves of the condition.</li>
     <li>By for the biggest & easiest trap you can fall into when dealing with integration tests is the temptation to use them like unit tests.
       <ul>
         <li><b>Good:</b> The interaction between a controller & the model, or other objects that provide data.</li>
@@ -64,7 +64,7 @@
     </li>
     <li>Security issues are, at base, just bugs. Most of the practices you follow to keep your code bug-free will also help prevent and diagnose security issues.</li>
     <li>Always do security testing in pairs: the blocked logic and the okay logic.</li>
-    <li>When a single change in your code breaks multiple tests, consider the idea that your testing strategy is flawed.</li>
+    <li><b>When a single change in your code breaks multiple tests, consider the idea that your testing strategy is flawed.</b></li>
     <li>Write your test as close as possible to the code logic that's being tested.</li>
     <li>Adding user authentication can be very disruptive to existing tests. Try to get the basic infrastructure in place early.</li>
     <li>Test for mass assignment any time you have an attribute that needs to be secure and a controller method that touches that class based on user input.</li>
@@ -79,7 +79,7 @@
       </ul>
     </li>
     <li>Test the error code based on which object in the system needs to respond to the error.</li>
-    <li>User JavaScript testing to help design your JavaScript code to allow for modular items with few tangled interdependencies.</li>
+    <li>Use JavaScript testing to help design your JavaScript code to allow for modular items with few tangled interdependencies.</li>
     <li>Create only as many DOM elements or data as needed for the test to run.</li>
     <li>Jasmine spies replace a function object with a spy object that keeps track of how often the function is called.</li>
     <li>Treating the DOM as an external service that you relate to via an adapter can lead to very maintainable JavaScript code.</li>
@@ -90,18 +90,17 @@
       <ul>
       <li>The problem needs to have been caused by a code change, not a change in your environment.</li>
       <li>You need to be able to reliably trigger the problem.</li>
-      <li>It helpers if your commits are relatively small and if the system is in a loadable & executable state after each one.</li>
+      <li>It helper if your commits are relatively small and if the system is in a loadable & executable state after each one.</li>
       </ul>
     </li>
     <li>If you specify a test by line number, be sure not to add lines to the file. Added lines could make it so you aren't running the test you think you're running.</li>
-    <li>Rails is not your application, it is a framework on which you build your application.</li>
+    <li><b>Rails is not your application</b>, it is a framework on which you build your application.</li>
     <li>If you have enough time to break focus while your tests run, you may not be getting the full value of the TDD process.</li>
     <li>By requiring the needed files instead of the `rails_helper`, you can bypass the loading of rails and isolate your tests to their precise needed data, thus speeding them up.</li>
     <li>The only way to know the boundaries of a new coding tool is to go past them. Try things.</li>
     <li>You can use doubles to remove test dependencies.</li>
     <li>You don't need to start with elaborate object indirection, but it's useful when logic gets complicated.</li>
-    <li>When dealing with legacy code, respect code that works. You don't know what constraints the previous coders worked under.</li>
-    <li>When dealing with legacy code, test the following.
+    <li><b>When dealing with legacy code, respect code that works. You don't know what constraints the previous coders worked under.</b> Test the following.
       <ul>
         <li>Describe the current behavior</li>
         <li>Make sure code changes have no unintended consequences.</li>
@@ -112,7 +111,7 @@
     </li>
     <li>When writing initial unit tests for legacy code, use the test to explore the code's behavior. Try to write a passing test without changing the code.
       <ul>
-        <li>You might need to create objects and the chain can get unwieldy, it's okay: <b>the goal is to understand what's happening.</b> If the code is unwieldy, let the test stand as a monument to things that need to be changed.</li>
+        <li>You might need to create objects and the chain can get unwieldy, it's okay: <b>the goal is to understand what's happening. If the code is unwieldy, let the test stand as a monument to things that need to be changed.</b></li>
       </ul>
     </li>
     <li>Dependency Removal - well done TDD forces individual pieces of the code to be as independent from each other as possible.
