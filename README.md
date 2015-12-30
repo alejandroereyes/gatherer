@@ -1,9 +1,11 @@
 [![Build Status](https://travis-ci.org/alejandroereyes/gatherer.svg?branch=master)](https://travis-ci.org/alejandroereyes/gatherer)  [![Test Coverage](https://codeclimate.com/github/alejandroereyes/gatherer/badges/coverage.svg)](https://codeclimate.com/github/alejandroereyes/gatherer/coverage)  [![Code Climate](https://codeclimate.com/github/alejandroereyes/gatherer/badges/gpa.svg)](https://codeclimate.com/github/alejandroereyes/gatherer)
 
 # Gatherer
-  This app is a tutorial taken from [Rails 4 Test Prescriptions](https://pragprog.com/book/nrtest2/rails-4-test-prescriptions) in order to learn more about testing.
+  This tutorial is taken from [Rails 4 Test Prescriptions](https://pragprog.com/book/nrtest2/rails-4-test-prescriptions) in order to learn more about testing.
 
-### Test Prescriptions
+#### [Code Snippets](https://github.com/alejandroereyes/gatherer/blob/master/notes/code_snippets_with_notes.md) - <kbd>Code with inline notes.</kbd>
+
+#### Test Prescriptions
   <ol>
     <li>Use the TDD process to create and adjust your code's design in small, incremental steps.</li>
     <li>In a test-driven process, <b>if it is difficult to write tests for a feature</b>, strongly consider the possibility that the <b>underlying code needs to be changed</b>.</li>
