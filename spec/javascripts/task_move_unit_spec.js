@@ -1,6 +1,7 @@
 describe("with a list of tasks", function() {
 
   beforeEach(function() {
+    jasmine.addMatchers(customMatchers);
     table = affix("table");
     table.affix("tr.task#task_1 a.up");
     table.affix("tr.task#task_2 a.up+a.down");
@@ -29,5 +30,12 @@ describe("with a list of tasks", function() {
     Project.upClickOn($("#task_2 .up"));
     expect($.map($("tr"), function(item) { return $(item).attr("id") }))
         .toEqual(["task_2", "task_1", "task_3"]);
+  });
+
+  it("can handle up click with spy", function() {
+    spyOn(Project, 'taskFromAnchor').and.returnValue($("#task_2"))
+    Project.upClickOn($("#task_2 .up"));
+    expect($("tr")).toMatchDomIds(["task_2", "task_1", "task_3"]);
+    expect(Project.taskFromAnchor).toHaveBeenCalled();
   });
 });

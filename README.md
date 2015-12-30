@@ -79,4 +79,5 @@
     <li>Test the error code based on which object in the system needs to respond to the error.</li>
     <li>User JavaScript testing to help design your JavaScript code to allow for modular items with few tangled interdependencies.</li>
     <li>Create only as many DOM elements or data as needed for the test to run.</li>
+    <li>Jasmine spies replace a function object with a spy object that keeps track of how often the function is called.</li>
   </ol>
