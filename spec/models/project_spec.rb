@@ -7,12 +7,14 @@ RSpec.describe Project do
     let(:task)    { Task.new }
 
     it 'considers a project with no tasks to be done' do
-      expect(project).to be_done # using the implicit matcher 'done' from be_done will be set as predicate method on project ie. project.done?
+      expect(project).to be_done # using the implicit matcher 'done' from be_done
+                                 #  will be set as predicate method on project ie. project.done?
     end
 
     it 'knows that a project with an imcomplete task is not done' do
       project.tasks << task
-      expect(project).to_not be_done #using the implicit matcher do use done as predicate method for project ie. project.done? will be called
+      expect(project).to_not be_done # using the implicit matcher do use done as predicate method
+                                     #  for project ie. project.done? will be called
     end
 
     it 'marks a project done if its task are done' do
@@ -86,7 +88,8 @@ RSpec.describe Project do
       it "stubs the class" do
         allow(Project).to receive(:find).and_return(
           Project.new(name: "Project Greenlight")) # it's also possible to stud a class
-        project = Project.find(1) # by stubbing find, we're not hitting the db. Should avoid stub on find, it would be better to stub a specific created model method that has meaningful and specific behavior.
+        project = Project.find(1) # by stubbing find, we're not hitting the db. Should avoid stub on find,
+                                  #  it would be better to stub a specific created model methodthat has meaningful and specific behavior.
         # allow_any_instance_of(Project).to receive(:save).and_return(false) # this would allow any instance of a class to stub a certian message.
         expect(project.name).to eq("Project Greenlight")
       end
