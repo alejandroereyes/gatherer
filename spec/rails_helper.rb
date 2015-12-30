@@ -6,6 +6,7 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rspec'
+require 'capybara/poltergeist'
 require 'pry'
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -58,5 +59,19 @@ end
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/cassettes'
   c.hook_into :webmock
+  c.ignore_localhost = true
   c.configure_rspec_metadata!
 end
+
+Capybara.javascript_driver = :poltergeist
+
+class ActiveRecord::Base
+  mattr_accessor :shared_connection
+  @@shared_connection
+
+  def self.connection
+    @@shared_connection || retrieve_connection
+  end
+end
+
+ActiveRecord::Base.shared_connection = ActiveRecord::Base.connection

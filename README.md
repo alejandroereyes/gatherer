@@ -81,4 +81,5 @@
     <li>Create only as many DOM elements or data as needed for the test to run.</li>
     <li>Jasmine spies replace a function object with a spy object that keeps track of how often the function is called.</li>
     <li>Treating the DOM as an external service that you relate to via an adapter can lead to very maintainable JavaScript code.</li>
+    <li>Use Capybara's JavaScript integration-testing capabilities sparingly lest you be very, very annoyed. Test as much as possible within each layer, separate from the others.</li>
   </ol>
